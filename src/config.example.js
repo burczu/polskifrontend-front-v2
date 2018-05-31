@@ -1,7 +1,18 @@
 /* eslint-disable max-len, no-undef */
+
+// TODO: set up port and host with local dev defaults
 export const port = process.env.PORT || 3000;
 export const host = process.env.WEBSITE_HOSTNAME || `localhost:${port}`;
 
+// TODO: set up Heroku deployment data
+export const heroku = {
+  name: 'heroku project name',
+  url: 'heroku repo git url',
+  branch: 'master',
+  website: 'website address'
+};
+
+// TODO: set up Google Analytics tracking ID
 export const analytics = {
   // https://analytics.google.com/
   google: {
@@ -16,12 +27,13 @@ export const getDefaultHeaders = (withToken = false) => {
   };
 
   if (withToken) {
-    result['X-Access-Token'] = 'XXX'; // get it from cookie or something
+    result['X-Access-Token'] = 'XXX'; // TODO: get it from cookie or something
   }
 
   return result;
 };
 
+// TODO: set up api addresses for dev and prod environments
 const api = {
   dev: {
     url: 'http://localhost:port'

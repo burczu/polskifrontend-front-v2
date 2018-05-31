@@ -12,31 +12,10 @@ import fetch from 'node-fetch';
 import { spawn } from './lib/cp';
 import { makeDir, moveDir, cleanDir } from './lib/fs';
 import run from './run';
+import { heroku } from '../src/config';
 
-// GitHub Pages
-// const remote = {
-//   name: 'github',
-//   url: 'https://github.com/<user>/<repo>.git',
-//   branch: 'gh-pages',
-//   website: 'https://<user>.github.io/<repo>/',
-//   static: true,
-// };
-
-// Heroku
-const remote = {
-  name: 'heroku',
-  url: 'https://git.heroku.com/polskifrontend-front.git',
-  branch: 'master',
-  website: 'https://polskifrontend-front.herokuapp.com',
-};
-
-// Azure Web Apps
-// const remote = {
-//   name: 'azure',
-//   url: 'https://<user>@<app>.scm.azurewebsites.net:443/<app>.git',
-//   branch: 'master',
-//   website: `http://<app>.azurewebsites.net`,
-// };
+// Heroku config
+const remote = heroku;
 
 const options = {
   cwd: path.resolve(__dirname, '../build'),
